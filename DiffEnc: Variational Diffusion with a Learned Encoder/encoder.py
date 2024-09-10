@@ -7,14 +7,14 @@ class Encoder(nn.Module):
     def __init__(self):
         super(Encoder, self).__init__()
         self.encoder_layers = nn.Sequential(
-            nn.Conv2d(1, 64, kernel_size=3, stride=2, padding=1),
-            nn.BatchNorm2d(64),  # Batch normalization layer
-            nn.ReLU(),
-            nn.Conv2d(64, 128, kernel_size=3, stride=2, padding=1),
+            nn.Conv2d(1, 128, kernel_size=3, stride=2, padding=1),
             nn.BatchNorm2d(128),  # Batch normalization layer
             nn.ReLU(),
+            nn.Conv2d(128, 256, kernel_size=3, stride=2, padding=1),
+            nn.BatchNorm2d(256),  # Batch normalization layer
+            nn.ReLU(),
             nn.Flatten(),
-            nn.Linear(128 * 7 * 7, 256),
+            nn.Linear(256 * 7 * 7, 512),
             nn.ReLU()
         )
 

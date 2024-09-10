@@ -22,7 +22,7 @@ decoder = Decoder().to(device)
 model = DiffusionModel(encoder, decoder, device).to(device)
 
 # Optimizer
-optimizer = Adam(model.parameters(), lr=1e-3)
+optimizer = Adam(model.parameters(), lr=learning_rate)
 
 # Learning rate scheduler
 scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=10, gamma=0.9)
