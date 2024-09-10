@@ -7,7 +7,7 @@ from torch.optim import Adam
 from utils import save_checkpoint, log_metrics
 
 epochs = 100
-learning_rate = 1e-2
+learning_rate = 1e-3
 if torch.cuda.is_available():
     device = 'cuda'
 elif torch.backends.mps.is_available():
