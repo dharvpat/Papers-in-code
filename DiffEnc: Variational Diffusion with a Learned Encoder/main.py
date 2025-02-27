@@ -44,3 +44,6 @@ for epoch in range(epochs):
     save_checkpoint(model, optimizer, epoch, epoch_loss)
     
     print(f"Epoch {epoch} - Loss: {epoch_loss:.4f}")
+
+torch.save(model.state_dict(), "diffusion_model.pth")
+print("Model saved successfully!")
